@@ -32,10 +32,4 @@ class DistributedEnvironment:
         # )
         # os.environ["LOCAL_RANK"] = os.environ["SLURM_LOCALID"]
         # os.environ["RANK"] = os.environ["SLURM_PROCID"]
-        
-       os.environ["MASTER_ADDR"] = "localhost"
-       os.environ["MASTER_PORT"] = "33333"
-       os.environ["WORLD_SIZE"] = "2"  # 设置你总共的进程数量
-       os.environ["RANK"] = os.environ.get("RANK", "0")  # 当前进程的 rank
-       os.environ["LOCAL_RANK"] = os.environ.get("LOCAL_RANK", "0")  # 本地的 rank
- 
+
