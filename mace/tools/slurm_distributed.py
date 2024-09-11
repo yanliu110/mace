@@ -38,7 +38,4 @@ class DistributedEnvironment:
        os.environ["WORLD_SIZE"] = "2"  # 设置你总共的进程数量
        os.environ["RANK"] = os.environ.get("RANK", "0")  # 当前进程的 rank
        os.environ["LOCAL_RANK"] = os.environ.get("LOCAL_RANK", "0")  # 本地的 rank
-       dist.init_process_group(backend="nccl", init_method="env://")
-       local_rank = int(os.environ["LOCAL_RANK"])
-       torch.cuda.set_device(local_rank)
-       print(f"Process {dist.get_rank()} is using GPU {local_rank}")
+ 
